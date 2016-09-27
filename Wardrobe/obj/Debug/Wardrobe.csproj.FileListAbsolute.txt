@@ -41,3 +41,4 @@ C:\Users\WeCanCodeIT\documents\visual studio 2015\Projects\Wardrobe\Wardrobe\bin
 C:\Users\WeCanCodeIT\documents\visual studio 2015\Projects\Wardrobe\Wardrobe\bin\Newtonsoft.Json.xml
 C:\Users\WeCanCodeIT\documents\visual studio 2015\Projects\Wardrobe\Wardrobe\obj\Debug\Wardrobe.dll
 C:\Users\WeCanCodeIT\documents\visual studio 2015\Projects\Wardrobe\Wardrobe\obj\Debug\Wardrobe.pdb
+C:\Users\WeCanCodeIT\documents\visual studio 2015\Projects\Wardrobe\Wardrobe\obj\Debug\Wardrobe.csprojResolveAssemblyReference.cache

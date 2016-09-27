@@ -9,6 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+
 <table class="table">
     <tr>
         <th>
@@ -30,6 +32,8 @@
     </tr>
 
 @foreach (var item in Model) {
+    
+    
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Color.ColorName)
@@ -43,9 +47,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
+        
+            <td>
+                <img class ="thumbnail" src="@Url.Content(item.Photo)" />
+                @*@Html.DisplayFor(modelItem => item.Photo) Do not need for pics*@
+            </td>       
+        
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TopID }) |
             @Html.ActionLink("Details", "Details", new { id=item.TopID }) |

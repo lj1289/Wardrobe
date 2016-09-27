@@ -154,6 +154,14 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Accessories\backpack.jpg" />
+    <Content Include="Content\Images\Accessories\glasses.jpg" />
+    <Content Include="Content\Images\Accessories\watch.jpg" />
+    <Content Include="Content\Images\Shoes\Dress-Shoes.jpg" />
+    <Content Include="Content\Images\Shoes\Sperrys.jpg" />
+    <Content Include="Content\Images\Shoes\Vans.jpg" />
+    <Content Include="Content\Images\Tops\jacket.jpg" />
+    <Content Include="Content\Images\Tops\Sweatshirt.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -229,6 +237,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Bottoms\" />
+    <Folder Include="Content\Images\Shoes\thumbnail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
