@@ -20,6 +20,6 @@ namespace Wardrobe.Models
         public virtual Season Season { get; set; }
         public virtual Occasion Occasion { get; set; }
 
-        public virtual Outfit Outfit { get; set; }
+        public virtual ICollection<Outfit> Outfit { get; set; }
     }
 }

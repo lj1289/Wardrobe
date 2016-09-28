@@ -140,6 +140,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609230043398_InitialCreate.cs" />
+    <Compile Include="Migrations\201609230043398_InitialCreate.Designer.cs">
+      <DependentUpon>201609230043398_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609272219508_NullableIDs.cs" />
+    <Compile Include="Migrations\201609272219508_NullableIDs.Designer.cs">
+      <DependentUpon>201609272219508_NullableIDs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609272354595_ICollection Outfit.cs" />
+    <Compile Include="Migrations\201609272354595_ICollection Outfit.Designer.cs">
+      <DependentUpon>201609272354595_ICollection Outfit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accessory.cs" />
     <Compile Include="Models\Bottom.cs" />
     <Compile Include="Models\Color.cs" />
@@ -150,6 +163,7 @@
     <Compile Include="Models\Top.cs" />
     <Compile Include="Models\WardrobeContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\OutfitViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -157,10 +171,14 @@
     <Content Include="Content\Images\Accessories\backpack.jpg" />
     <Content Include="Content\Images\Accessories\glasses.jpg" />
     <Content Include="Content\Images\Accessories\watch.jpg" />
+    <Content Include="Content\Images\Bottoms\Chinos.jpg" />
+    <Content Include="Content\Images\Bottoms\Khakis.jpg" />
+    <Content Include="Content\Images\Bottoms\Levi-Jeans.jpg" />
     <Content Include="Content\Images\Shoes\Dress-Shoes.jpg" />
     <Content Include="Content\Images\Shoes\Sperrys.jpg" />
     <Content Include="Content\Images\Shoes\Vans.jpg" />
     <Content Include="Content\Images\Tops\jacket.jpg" />
+    <Content Include="Content\Images\Tops\Supreme-jacket.jpg" />
     <Content Include="Content\Images\Tops\Sweatshirt.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -237,7 +255,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\Bottoms\" />
     <Folder Include="Content\Images\Shoes\thumbnail\" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +264,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609230043398_InitialCreate.resx">
+      <DependentUpon>201609230043398_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609272219508_NullableIDs.resx">
+      <DependentUpon>201609272219508_NullableIDs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609272354595_ICollection Outfit.resx">
+      <DependentUpon>201609272354595_ICollection Outfit.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
