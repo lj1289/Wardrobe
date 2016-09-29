@@ -20,6 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Top.Name)
         </th>
+        <th>
+            Accessories
+        </th>
         <th></th>
     </tr>
 
@@ -33,6 +36,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Top.Name)
+        </td>
+        <td>
+            @foreach (var accessory in item.Accessory)
+            {
+                <div>@Html.DisplayFor(modelItem => accessory.Name)</div>
+            }
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OutfitID }) |

@@ -90,14 +90,10 @@ namespace Wardrobe.Controllers
                                  {
                                      Value = a.AccessoryID.ToString(),
                                      Text = a.Name
-                                    
                                   }
-                
-                
-                                
             };
 
-            return View(outfit);
+            return View(outfitViewModel);
         }
 
         // POST: Outfits/Edit/5
@@ -105,11 +101,29 @@ namespace Wardrobe.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OutfitID,TopID,BottomID,ShoeID")] Outfit outfit)
+        public ActionResult Edit([Bind(Include = "OutfitID,TopID,BottomID,ShoeID")] Outfit outfit, List<int> SelectedAccessories)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(outfit).State = EntityState.Modified;
+                //Variable equal to the current outfit
+                var existingOutfit = db.Outfits.Find(outfit.OutfitID);
+
+                //Changes existing properties to new properties
+                existingOutfit.TopID = outfit.TopID;
+                existingOutfit.BottomID = outfit.BottomID;
+                existingOutfit.ShoeID = outfit.ShoeID;
+                existingOutfit.Accessory.Clear();
+
+                foreach (int accessoryID in SelectedAccessories)
+                {
+                    //Find the accessory by its ID and add it to its existing outfit
+                    existingOutfit.Accessory.Add(db.Accessories.Find(accessoryID));
+                }
+
+                //The below line takes the outfit from the user
+                //and saves it directly to the database.
+                //We need to attach accessories first.
+                //db.Entry(outfit).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

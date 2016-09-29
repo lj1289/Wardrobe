@@ -21,7 +21,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Outfit.TopID, "TopID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("TopID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.Outfit.TopID, (SelectList)ViewBag.TopID, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Outfit.TopID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -30,7 +30,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Outfit.BottomID, "BottomID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("BottomID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.Outfit.BottomID, (SelectList)ViewBag.BottomID, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Outfit.BottomID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -38,8 +38,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Outfit.ShoeID, "ShoeID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ShoeID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.Outfit.ShoeID, (SelectList)ViewBag.ShoeID, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Outfit.ShoeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedAccessories, "Accessories", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.SelectedAccessories, Model.AllAccessories)
             </div>
         </div>
 
