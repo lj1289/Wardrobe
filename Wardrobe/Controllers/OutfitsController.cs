@@ -38,20 +38,49 @@ namespace Wardrobe.Controllers
         }
 
         // GET: Outfits/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "Name");
-            ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "Name");
-            ViewBag.TopID = new SelectList(db.Tops, "TopID", "Name");
-            return View();
+
+            Outfit outfit = new Outfit();
+
+            if (outfit == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "Name", outfit.BottomID);
+            ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "Name", outfit.ShoeID);
+            ViewBag.TopID = new SelectList(db.Tops, "TopID", "Name", outfit.TopID);
+
+            OutfitViewModel outfitViewModel = new OutfitViewModel
+            {
+                Outfit = outfit,
+                AllAccessories = from a in db.Accessories
+                                 select new SelectListItem
+                                 {
+                                     Value = a.AccessoryID.ToString(),
+                                     Text = a.Name
+                                 }
+            };
+
+            return View(outfitViewModel);
         }
+
+        //public ActionResult Create()
+        //{
+        //    ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "Name");
+        //    ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "Name");
+        //    ViewBag.TopID = new SelectList(db.Tops, "TopID", "Name");
+        //    ViewBag.Accessories = new SelectList(db.Accessories, "Accessories", "Name");
+
+        //    return View();
+        //}
 
         // POST: Outfits/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OutfitID,TopID,BottomID,ShoeID")] Outfit outfit)
+        public ActionResult Create([Bind(Include = "OutfitID,TopID,BottomID,ShoeID")] Outfit outfit, List<int> SelectedAccessories)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +92,8 @@ namespace Wardrobe.Controllers
             ViewBag.BottomID = new SelectList(db.Bottoms, "BottomID", "Name", outfit.BottomID);
             ViewBag.ShoeID = new SelectList(db.Shoes, "ShoeID", "Name", outfit.ShoeID);
             ViewBag.TopID = new SelectList(db.Tops, "TopID", "Name", outfit.TopID);
+            //ViewBag.Accessory = new SelectList(db.Accessories, "Accessories", "Name", outfit.Accessory)
+
             return View(outfit);
         }
 
