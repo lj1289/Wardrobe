@@ -83,6 +83,11 @@ namespace Wardrobe.Controllers
         {
             if (ModelState.IsValid)
             {
+                foreach (int accessoryID in SelectedAccessories)
+                {
+                    outfit.Accessory.Add(db.Accessories.Find(accessoryID));
+                }
+
                 db.Outfits.Add(outfit);
                 db.SaveChanges();
                 return RedirectToAction("Index");

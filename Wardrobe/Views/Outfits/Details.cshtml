@@ -11,7 +11,15 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Bottom.Name)
+            Top:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Top.Name)
+        </dd>
+        
+        <dt>
+            Bottom:
         </dt>
 
         <dd>
@@ -19,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Shoe.Name)
+            Shoe:
         </dt>
 
         <dd>
@@ -27,11 +35,14 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Top.Name)
+            Accessories:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Top.Name)
+            @foreach (var accessory in Model.Accessory)
+            {
+                <div>@Html.DisplayFor(modelItem => accessory.Name)</div>
+            }
         </dd>
 
     </dl>
