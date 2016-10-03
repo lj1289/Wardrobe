@@ -40,7 +40,6 @@ namespace Wardrobe.Controllers
         // GET: Outfits/Create
         public ActionResult Create(int? id)
         {
-
             Outfit outfit = new Outfit();
 
             if (outfit == null)
