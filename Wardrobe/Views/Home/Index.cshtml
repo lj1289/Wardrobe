@@ -9,8 +9,13 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Tops</h2>
+    <div class="col-md-12">
+        <h2>@Html.ActionLink("Outfits", "Index", "Outfits")</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis sapien nec mauris hendrerit, ut cursus urna faucibus. Vestibulum non nibh iaculis, interdum nunc ut, iaculis nisl. Praesent scelerisque velit et rhoncus posuere. Mauris venenatis sapien at justo congue, ut iaculis ex molestie. Curabitur sed nibh nisl. Duis ac eros tincidunt, accumsan lectus ut, rutrum lectus. Vivamus laoreet, libero ut pretium vehicula, libero orci pretium risus, ac congue neque nisl sollicitudin odio. Vivamus euismod justo faucibus tortor facilisis, sed varius mauris bibendum. Nunc suscipit lorem eu eros volutpat sollicitudin. Aenean vitae mattis enim, a mattis tortor. Integer a luctus purus, semper consectetur ante. Sed aliquet imperdiet velit at posuere. Quisque consectetur felis mi, sit amet posuere quam blandit vitae.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Tops", "Index", "Tops")</h2>
         <p>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
             enables a clean separation of concerns and gives you full control over markup
@@ -18,14 +23,22 @@
         </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Bottms</h2>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Bottoms", "Index", "Bottoms")</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2> New Outfit</h2>
+    <div class="col-md-3">
+        <h2> @Html.ActionLink("Shoes", "Index", "Shoes")</h2>
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
+    <div class="col-md-3">
+        <h2> @Html.ActionLink("Accessories", "Index", "Accessories")</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+
+
+
 </div>
